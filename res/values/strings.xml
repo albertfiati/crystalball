@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">mestlessons</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="enlightenMe"><b>Enlighten Me</b></string>
+    
+    <string-array name="answers">
+        <item>Hello Ghana</item>
+        <item>Good Morning</item>
+        <item>I love Android</item>
+        <item>Love what you do</item>
+        <item>Life is fun</item>
+        <item>iOS is crappy</item>
+    </string-array>
+
+</resources>
