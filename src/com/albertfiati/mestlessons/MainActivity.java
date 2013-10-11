@@ -4,6 +4,7 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -27,6 +28,7 @@ public class MainActivity extends Activity {
 		txtAnswer.setText(answers[rand.nextInt(answers.length)]);
 		animate();
 		animateAnswer(txtAnswer);
+		playSound();
 	}
 	
 	private void animate(){
@@ -38,7 +40,7 @@ public class MainActivity extends Activity {
 			ballAnimation.stop();
 		}
 		
-		ballAnimation.start();
+		ballAnimation.start();		
 	}
 	
 	private void animateAnswer(TextView tv){
@@ -46,6 +48,19 @@ public class MainActivity extends Activity {
 		fadeInAnimation.setDuration(1500);
 		fadeInAnimation.setFillAfter(true);
 		tv.setAnimation(fadeInAnimation);
+	}
+	
+	private void playSound(){
+		MediaPlayer mp = MediaPlayer.create(this,R.raw.crystal_ball);
+		mp.start();
+		
+		mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+			}
+		});
 	}
 
 	@Override
